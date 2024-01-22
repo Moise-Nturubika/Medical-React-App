@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import GiveReviews from './GiveFeedback';
 
 const ReviewForm = () => {
     return (
@@ -17,17 +18,18 @@ const ReviewForm = () => {
                         <td>1</td>
                         <td>Dr. John Doe</td>
                         <td>Cardialogy</td>
-                        <td> <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Click here</button></td>
+                        <td><GiveReviews /></td>
                         <td>   </td>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td>Dr. John Doe</td>
                         <td>Cardialogy</td>
-                        <td> <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Click here</button></td>
+                        <td><GiveReviews /></td>
                         <td>   </td>
                     </tr>
                 </table>
+                <br />
             </div>
         </center>
     );
