@@ -80,6 +80,7 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                 <AppointmentForm doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
               )}
             </div>
+            
       {/* <div>  <button className='book-appointment-btn'>                    
             <div>Book Appointment</div>
           <div>No Booking Fee</div>
