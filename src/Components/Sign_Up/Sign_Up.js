@@ -1,26 +1,49 @@
 import React, { useState } from 'react';
-import './Sign_Up.css';
-
-const SignUp = () => {
+import './Sign_Up.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { API_URL } from '../../config';
+const Sign_Up = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState('');
-
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+    const register = async (e) => {
         e.preventDefault();
-        if(name.length < 1) {
-            setShowerr("Name can't be empty");
-        } else if(email.length < 1) {
-            setShowerr("Email can't be empty");
-        } else if(phone.length < 10) {
-            setShowerr("Phone number must have at least 10 digits");
-        } else if(password.length < 1) {
-            setShowerr("Password can't be empty");
+        // API Call
+        const response = await fetch(`${API_URL}/api/auth/register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: password,
+                phone: phone,
+            }),
+        });
+        const json = await response.json();
+        if (json.authtoken) {
+            sessionStorage.setItem("auth-token", json.authtoken);
+            sessionStorage.setItem("name", name);
+            // phone and email
+            sessionStorage.setItem("phone", phone);
+            sessionStorage.setItem("email", email);
+            // Redirect to home page
+            navigate("/");   //on directing to home page you need to give logic to change login and signup buttons with name of the user and logout button where you have implemented Navbar functionality
+            window.location.reload();
+        } else {
+            if (json.errors) {
+                for (const error of json.errors) {
+                    setShowerr(error.msg);
+                }
+            } else {
+                setShowerr(json.error);
+            }
         }
-    }
-
+    };
     return (
         <div className="container" style={{marginTop:'5%'}}>
             <div className="signup-grid">
