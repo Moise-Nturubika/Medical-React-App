@@ -10,6 +10,8 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
 import DoctorCard from './Components/DoctorCard/DoctorCard';
 import BookingConsultation from './Components/BookingConsultation';
+import Notification from './Components/Notification/Notification';
+import Login from './Components/Login/Login';
 
 function App() {
 
@@ -19,10 +21,12 @@ function App() {
           <Navbar/>
               <Routes>
                 <Route path="/" element={<Landing_Page/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/instant-consultation" element={<InstantConsultation />} />
                 <Route path="/find-doctor" element={<FindDoctorSearch />} />
                 <Route path="/card-doctor" element={<DoctorCard />} />
                 <Route path="/booking-consult" element={<BookingConsultation />} />
+                <Route path="/notif" element={<Notification />} />
               </Routes>
         </BrowserRouter>
        
