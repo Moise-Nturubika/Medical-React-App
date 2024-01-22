@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Sign_Up.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
+
 const Sign_Up = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -54,7 +55,7 @@ const Sign_Up = () => {
                     Already a member? <span><a href="../Login/Login.html" style={{color: "#2190FF"}}> Login</a></span>
                 </div>
                 <div className="signup-form">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={register}>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input value={name} onChange={(e) => setName(e.target.value)} type="text" name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
@@ -86,4 +87,4 @@ const Sign_Up = () => {
     );
 }
 
-export default SignUp;
+export default Sign_Up;
