@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Landing_Page.css";
+// import { Link } from "react-router-dom";
+import './LandingPage.css';
 
 const Landing_Page = () => {
   return (
@@ -12,7 +12,6 @@ const Landing_Page = () => {
               Your Health<br/>
 
               <span className="text-gradient">
-                
                 Our Responsibility
               </span>
             </h1>
