@@ -3,6 +3,7 @@ import './InstantConsultation.css';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import FindDoctorSearchIC from './FindDoctorSearchIC/FindDoctorSearchIC';
 import DoctorCardIC from './DoctorCardIC/DoctorCardIC';
+import ReviewForm from '../../Components/ReviewForm/ReviewForm';
 
 const InstantConsultation = () => {
     const [searchParams] = useSearchParams();
@@ -61,7 +62,8 @@ const InstantConsultation = () => {
     return (
         <center>
             <div  className="searchpage-container">
-            <FindDoctorSearchIC onSearch={handleSearch} />
+                <ReviewForm />
+            {/* <FindDoctorSearchIC onSearch={handleSearch} />
             <div className="search-results-container">
             {isSearched ? (
                 <center>
@@ -76,7 +78,7 @@ const InstantConsultation = () => {
                 ) : (
                 ''
                 )}
-            </div>
+            </div> */}
         </div>
         </center>
     )
