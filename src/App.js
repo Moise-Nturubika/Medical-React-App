@@ -20,7 +20,7 @@ function App() {
         <BrowserRouter>
           <Navbar/>
               <Routes>
-                <Route path="/" element={<ReviewForm/>}/>
+                <Route path="/" element={<Landing_Page/>}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/signup" element={<Sign_Up />}/>
                 <Route path="/instant-consultation" element={<InstantConsultation />} />
